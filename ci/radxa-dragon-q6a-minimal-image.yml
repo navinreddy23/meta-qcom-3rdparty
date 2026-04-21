@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/siemens/kas/master/kas/schema-kas.json
+header:
+  version: 14
+  includes:
+    - ci/radxa-dragon-q6a.yml
+    - ci/qcom-distro.yml
+    - ci/radxa-dragon-q6a-lock.yml
+  
+target: qcom-minimal-image
+
+local_conf_header:
+  radxa-disable-adb: |
+    SYSTEMD_AUTO_ENABLE:pn-android-tools = "disable"
+
+  image-packages: |
+    IMAGE_INSTALL:append = " \
+        dropbear \
+        openssh-sftp-server \
+        systemd-networkd \
+        btop \
+    "
+    BAD_RECOMMENDATIONS:remove = "systemd-networkd"
