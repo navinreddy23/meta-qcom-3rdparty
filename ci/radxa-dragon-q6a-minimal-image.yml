@@ -1,10 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/siemens/kas/master/kas/schema-kas.json
 header:
   version: 14
-  includes:
-    - ci/radxa-dragon-q6a.yml
-    - ci/qcom-distro.yml
-    - ci/radxa-dragon-q6a-lock.yml
   
 target: qcom-minimal-image
 
